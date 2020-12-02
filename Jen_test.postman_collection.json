@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "a2cf1588-32a4-4482-a04a-61ff10ead57e",
+		"name": "Jen_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://www.baidu.com/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a7afdbf1-6252-423c-8951-617ef4de1257",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+							"if(responseCode.code==200 ){\r",
+							"    tests[\"响应成功\"]=true;\r",
+							"    \r",
+							"}else{\r",
+							"    tests[\"响应失败\"]=false;\r",
+							" }"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.baidu.com/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"baidu",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
