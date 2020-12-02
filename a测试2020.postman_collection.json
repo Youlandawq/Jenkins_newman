@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "69435b6f-7792-465b-bd3c-deaec29fb9e2",
+		"name": "a测试2020",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "前端",
+			"item": [
+				{
+					"name": "http://124.70.218.42/",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7120021d-0340-4d2a-84de-7f26a0697e06",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+									"tests[\"Body matches string\"] = responseBody.has(\"首页\");\r",
+									"if(responseCode.code==200 & responseBody.has(\"首页\")){\r",
+									"    tests[\"首页加载\"]=true;\r",
+									"    // postman.setNextRequest(\"登录_报备\")\r",
+									"}else{\r",
+									"    tests[\"登首页加载\"]=false;\r",
+									" }"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{front_ip}}",
+							"protocol": "http",
+							"host": [
+								"{{front_ip}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "栏目登录",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "captcha",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1/article/index.php/Admin/Login/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"article",
+						"index.php",
+						"Admin",
+						"Login",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "栏目测试",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "typename",
+							"value": "postman测试1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1/article/index.php/Admin/Type/tianjia",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"article",
+						"index.php",
+						"Admin",
+						"Type",
+						"tianjia"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
